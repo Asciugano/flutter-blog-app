@@ -42,7 +42,7 @@ class _SingupPageState extends State<SingupPage> {
         child: BlocConsumer<AuthBloc, AuthState>(
           listener: (context, state) {
             if (state is AuthFailure) {
-              showSnacBar(context, state.message);
+              showSnackBar(context, state.message);
             }
           },
           builder: (context, state) {
