@@ -1,3 +1,4 @@
+import 'package:blog/features/auth/domain/entities/user.dart';
 import 'package:blog/features/auth/domain/usecases/user_signup.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

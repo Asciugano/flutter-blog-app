@@ -1,14 +1,15 @@
 import 'package:blog/core/error/exception.dart';
+import 'package:blog/features/auth/data/models/user_model.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 abstract interface class AuthRemoteDataSource {
-  Future<String> signUp({
+  Future<UserModel> signUp({
     required String email,
     required String name,
     required String password,
   });
 
-  Future<String> login({required String email, required String password});
+  Future<UserModel> login({required String email, required String password});
 }
 
 class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
@@ -17,13 +18,13 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
   AuthRemoteDataSourceImpl(this.supabaseClient);
 
   @override
-  Future<String> login({required String email, required String password}) {
+  Future<UserModel> login({required String email, required String password}) {
     // TODO: implement login
     throw UnimplementedError();
   }
 
   @override
-  Future<String> signUp({
+  Future<UserModel> signUp({
     required String email,
     required String name,
     required String password,
@@ -38,7 +39,7 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
       if (response.user == null) {
         throw ServerException('can not create an User');
       }
-      return response.user!.id;
+      return UserModel.fromJson(response.user!.toJson());
     } catch (e) {
       throw ServerException(e.toString());
     }
