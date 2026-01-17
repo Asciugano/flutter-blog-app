@@ -8,16 +8,16 @@ import 'package:blog/features/auth/presentation/widgets/gradient_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class SinginPage extends StatefulWidget {
-  static MaterialPageRoute<SinginPage> route() =>
-      MaterialPageRoute(builder: (context) => SinginPage());
-  const SinginPage({super.key});
+class LoginPage extends StatefulWidget {
+  static MaterialPageRoute<LoginPage> route() =>
+      MaterialPageRoute(builder: (context) => LoginPage());
+  const LoginPage({super.key});
 
   @override
-  State<SinginPage> createState() => _SinginPageState();
+  State<LoginPage> createState() => _LoginPageState();
 }
 
-class _SinginPageState extends State<SinginPage> {
+class _LoginPageState extends State<LoginPage> {
   final emailController = TextEditingController();
   final passwController = TextEditingController();
 

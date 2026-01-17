@@ -90,7 +90,7 @@ class _SingupPageState extends State<SingupPage> {
 
                   const SizedBox(height: 10),
                   GestureDetector(
-                    onTap: () => Navigator.push(context, SinginPage.route()),
+                    onTap: () => Navigator.push(context, LoginPage.route()),
                     child: RichText(
                       text: TextSpan(
                         text: 'Already have an account? ',
