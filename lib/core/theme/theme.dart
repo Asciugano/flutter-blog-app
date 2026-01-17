@@ -11,6 +11,10 @@ class AppTheme {
   static final datkThemeMode = ThemeData.dark().copyWith(
     appBarTheme: const AppBarTheme(backgroundColor: AppPalette.backgroundColor),
     scaffoldBackgroundColor: AppPalette.backgroundColor,
+    chipTheme: const ChipThemeData(
+      color: WidgetStatePropertyAll(AppPalette.backgroundColor),
+      side: BorderSide.none,
+    ),
     inputDecorationTheme: InputDecorationTheme(
       contentPadding: const EdgeInsets.all(27),
       enabledBorder: _border(),
